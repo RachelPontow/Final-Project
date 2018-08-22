@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Basic Map</title>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Best Value</h1>
+      <p>College cost vs Income and Cost of Living in Major US cities </p>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+          <div style="height: 250px;"></div>
+      </div>
+      <div class="col-md-8">
+        <div style="height: 400px;" id="map"></div>
+          <!-- <script  src="{{ url_for(filename='config.js') }}"></script>    
+          <script  src="{{ url_for(filename='logic.js') }}"></script> -->
+        </div>
+        <div class="col-md-2">
+            <div style="height: 250px;"></div>
+        </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Selected School</h3>
+          </div>
+
+          <div id="school-metadata" class="panel-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="school" placeholder="School Name">
+              <a id="searchschool" class="btn btn-default">Search</a>
+            </div>
+            <table id= "SchoolData" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>University</th>
+                    <th>Average Monthly Loan Payment</th>
+                    <th>Average Debt (Income below 30K)</th>
+                    <th>Average Debt (Income between 30K and 75K)</th>
+                    <th>Average Debt (Income above 75K)</th>
+
+                  </tr>
+                </thead>
+                <tbody class="school">
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-md-4"></div> -->
+      <div class="col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Selected City</h3>
+          </div>
+          
+          <div id="city-metadata" class="panel-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="city" placeholder="City Name">
+              <a id="searchcity" class="btn btn-default">Search</a>
+            </div>
+              <table id= "tableData" class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Median Monthly Income</th>
+                      <th>Median Monthly Rent</th>
+                      <th>City</th>
+                      <th>State</th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="city">
+                  </tbody>
+                </table>
+          
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <!-- The div where we will inject our map -->
+  <div id="map"></div>
+   
+  
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+  
+  <!-- API key -->
+  <script type="text/javascript" src="config.js"></script>
+  <!-- JS -->
+  <script type="text/javascript" src="collegefinal.js"></script>
+  <script type="text/javascript" src="citiesfinal.js"></script>
+  <script type="text/javascript" src="dataset2.js"></script>
+  <script type="text/javascript" src="geocities.js"></script>
+
+  <script type="text/javascript" src="logic.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
